@@ -71,19 +71,19 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only
+  @integration-only @skip-terraform-config
   Scenario: Send deflat logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
-    And request contains "content_encoding" parameter with value "deflate"
+    And request contains "Content-Encoding" parameter with value "deflate"
     When the request is sent
     Then the response status is 202 Response from server (always 202 empty JSON).
 
-  @integration-only
+  @integration-only @skip-terraform-config
   Scenario: Send gzip logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
-    And request contains "content_encoding" parameter with value "gzip"
+    And request contains "Content-Encoding" parameter with value "gzip"
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).
 

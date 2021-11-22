@@ -13,7 +13,6 @@ Feature: Authentication
     Given an instance of "Authentication" API
     And new "Validate" request
 
-  @skip-validation
   Scenario: Validate API key returns "Forbidden" response
     When the request is sent
     Then the response status is 403 OK
