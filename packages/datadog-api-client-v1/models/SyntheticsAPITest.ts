@@ -15,11 +15,11 @@ import { SyntheticsTestOptions } from "./SyntheticsTestOptions";
 import { SyntheticsTestPauseStatus } from "./SyntheticsTestPauseStatus";
 
 export class SyntheticsAPITest {
-  "config"?: SyntheticsAPITestConfig;
+  "config": SyntheticsAPITestConfig;
   /**
    * Array of locations used to run the test.
    */
-  "locations"?: Array<string>;
+  "locations": Array<string>;
   /**
    * Notification message associated with the test.
    */
@@ -31,8 +31,8 @@ export class SyntheticsAPITest {
   /**
    * Name of the test.
    */
-  "name"?: string;
-  "options"?: SyntheticsTestOptions;
+  "name": string;
+  "options": SyntheticsTestOptions;
   /**
    * The public ID for the test.
    */
@@ -43,7 +43,7 @@ export class SyntheticsAPITest {
    * Array of tags attached to the test.
    */
   "tags"?: Array<string>;
-  "type"?: SyntheticsAPITestType;
+  "type": SyntheticsAPITestType;
 
   "unparsedObject"?: any;
 
@@ -58,10 +58,12 @@ export class SyntheticsAPITest {
     config: {
       baseName: "config",
       type: "SyntheticsAPITestConfig",
+      required: true,
     },
     locations: {
       baseName: "locations",
       type: "Array<string>",
+      required: true,
     },
     message: {
       baseName: "message",
@@ -76,10 +78,12 @@ export class SyntheticsAPITest {
     name: {
       baseName: "name",
       type: "string",
+      required: true,
     },
     options: {
       baseName: "options",
       type: "SyntheticsTestOptions",
+      required: true,
     },
     publicId: {
       baseName: "public_id",
@@ -100,6 +104,7 @@ export class SyntheticsAPITest {
     type: {
       baseName: "type",
       type: "SyntheticsAPITestType",
+      required: true,
     },
   };
 

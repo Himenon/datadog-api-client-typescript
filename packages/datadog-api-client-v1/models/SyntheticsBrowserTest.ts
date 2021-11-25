@@ -15,15 +15,15 @@ import { SyntheticsTestOptions } from "./SyntheticsTestOptions";
 import { SyntheticsTestPauseStatus } from "./SyntheticsTestPauseStatus";
 
 export class SyntheticsBrowserTest {
-  "config"?: SyntheticsBrowserTestConfig;
+  "config": SyntheticsBrowserTestConfig;
   /**
    * Array of locations used to run the test.
    */
-  "locations"?: Array<string>;
+  "locations": Array<string>;
   /**
    * Notification message associated with the test. Message can either be text or an empty string.
    */
-  "message": string;
+  "message"?: string;
   /**
    * The associated monitor ID.
    */
@@ -31,8 +31,8 @@ export class SyntheticsBrowserTest {
   /**
    * Name of the test.
    */
-  "name"?: string;
-  "options"?: SyntheticsTestOptions;
+  "name": string;
+  "options": SyntheticsTestOptions;
   /**
    * The public ID of the test.
    */
@@ -46,7 +46,7 @@ export class SyntheticsBrowserTest {
    * Array of tags attached to the test.
    */
   "tags"?: Array<string>;
-  "type"?: SyntheticsBrowserTestType;
+  "type": SyntheticsBrowserTestType;
 
   "unparsedObject"?: any;
 
@@ -61,15 +61,16 @@ export class SyntheticsBrowserTest {
     config: {
       baseName: "config",
       type: "SyntheticsBrowserTestConfig",
+      required: true,
     },
     locations: {
       baseName: "locations",
       type: "Array<string>",
+      required: true,
     },
     message: {
       baseName: "message",
       type: "string",
-      required: true,
     },
     monitorId: {
       baseName: "monitor_id",
@@ -80,10 +81,12 @@ export class SyntheticsBrowserTest {
     name: {
       baseName: "name",
       type: "string",
+      required: true,
     },
     options: {
       baseName: "options",
       type: "SyntheticsTestOptions",
+      required: true,
     },
     publicId: {
       baseName: "public_id",
@@ -104,6 +107,7 @@ export class SyntheticsBrowserTest {
     type: {
       baseName: "type",
       type: "SyntheticsBrowserTestType",
+      required: true,
     },
   };
 
